@@ -131,11 +131,15 @@
 .section {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: var(--gap);
 }
 
 .section:not(:has(.gallery)) {
   padding-bottom: var(--section-gap);
+}
+
+.section:has(.gallery) {
+  gap: 10px;
 }
 
 .section__title {
@@ -276,6 +280,10 @@
 
   .section__title {
     max-inline-size: 236px;
+  }
+
+  .section:has(.gallery) {
+  gap: 20px;
   }
 
   .column-table {
