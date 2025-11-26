@@ -1,6 +1,5 @@
 .page {
   margin: 0 auto;
-  padding: 10px;
   color: var(--text-color);
   font-family: var(--main-font);
   font-size: var(--font-size);
@@ -14,6 +13,7 @@
 
 .main {
   margin: 40px 0;
+  padding: 10px;
 }
 
 .decorated-zone {
@@ -31,15 +31,15 @@
 .decorated-zone::before {
   border-inline-end: 1px solid var(--decor-color);
   border-block-start: 1px solid var(--decor-color);
-  inset-inline-end: var(--gap);
-  inset-block-start: var(--gap);
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
 }
 
 .decorated-zone::after {
   border-inline-start: 1px solid var(--decor-color);
   border-block-end: 1px solid var(--decor-color);
-  inset-inline-start: var(--gap);
-  inset-block-end: var(--gap);
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
 }
 
 .decorated-zone .decorated-element {
@@ -66,6 +66,7 @@
 .header {
   position: relative;
   display: grid;
+  padding: 10px;
   grid-template-rows: 1fr min-content 1fr;
   block-size: 100vb;
   min-block-size: 668px;
@@ -112,7 +113,7 @@
 .header__title {
   color: var(--title-color);
   font-weight: 700;
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   text-shadow: 4px 4px 0 var(--accent-color);
 }
@@ -217,7 +218,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--gap);
   block-size: 100vb;
   min-block-size: 668px;
 }
@@ -225,7 +225,7 @@
 .footer__title {
   color: var(--title-color);
   font-weight: 700;
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
@@ -242,8 +242,26 @@
     margin: 60px 0;
   }
 
+  .header {
+    padding: 20px;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .decorated-zone::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+  }
+
   .header__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
   }
 
   .header__text {
@@ -284,7 +302,7 @@
   }
 
   .footer__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
   }
 }
 
