@@ -12,7 +12,7 @@
   --bg-image: url("../images/cover-image-dark.png");
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     --accent-color: #ff0070;
   --title-color: #db00ff;
