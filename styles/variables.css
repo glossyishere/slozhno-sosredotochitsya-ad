@@ -1,4 +1,19 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --accent-color: #ff0070;
+  --title-color: #db00ff;
+  --text-color: #f1b2ce;
+  --bg-color: #000028;
+  --article-title-color: #000028;
+  --section-title-color: #ff0070;
+  --button-color: #ff0070;
+  --button-hover-color: rgba(255, 0, 112, 0.4);
+  --decor-color: #ff0070;
+  --link-shadow: #ff0070;
+  --main-font: "IBM Plex mono", monospace;
+  --font-size: 18px;
+  --line-height: 23.4px;
+  --gap: 20px;
+  --section-gap: 50px;
+  --block-gap: 20px;
+  --bg-image: url("../images/cover-image-dark.png");
+}

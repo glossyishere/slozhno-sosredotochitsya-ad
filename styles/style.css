@@ -1,5 +1,317 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  margin: 0 auto;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main {
+  margin: 60px 0 60px 0;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  border-inline-end: 1px solid var(--decor-color);
+  border-block-start: 1px solid var(--decor-color);
+  inset-inline-end: var(--gap);
+  inset-block-start: var(--gap);
+}
+
+.decorated-zone::after {
+  border-inline-start: 1px solid var(--decor-color);
+  border-block-end: 1px solid var(--decor-color);
+  inset-inline-start: var(--gap);
+  inset-block-end: var(--gap);
+}
+
+.decorated-zone .decorated-element {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--decor-color);
+  inset-inline-end: calc(var(--gap) + 8px);
+  inset-block-start: var(--gap);
+}
+
+.decorated-zone .decorated-element::after {
+  content: "";
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--decor-color);
+  background-color: var(--decor-color);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+/* ШАПКА */
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: var(--gap);
+  block-size: 100vb;
+  min-block-size: 668px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding: 2px 13px;
+  color: var(--button-color);
+  text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--button-hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--button-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--button-color);
+  pointer-events: none;
+}
+
+.header__title {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  line-height: 83%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__text {
+  justify-self: end;
+  align-self: center;
+  font-weight: 700;
+  max-inline-size: 491px;
+}
+
+/* СЕКЦИИ*/
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.section:not(:has(.gallery)) {
+  padding-bottom: var(--section-gap);
+}
+
+.section__title {
+  color: var(--section-title-color);
+  font-weight: 700;
+  font-size: var(--font-size);
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--block-gap);
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--block-gap);
+}
+
+.article__title {
+  color: var(--article-title-color);
+  font-weight: 700;
+  font-size: var(--font-size);
+}
+
+.article__text {
+  font-weight: 400;
+}
+
+.title-decor {
+  color: var(--article-title-color);
+  background-color: var(--accent-color);
+}
+
+/* ССЫЛКА */
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--link-shadow);
+}
+
+.link:hover {
+  border-block-end: 1px solid currentColor;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+/* ГАЛЕРЕЯ */
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.gallery__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.gallery__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/* ПОДВАЛ */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--gap);
+  block-size: 100vb;
+  min-block-size: 668px;
+}
+
+.footer__title {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  line-height: 83%;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+/* НА ДРУГИЕ РАЗРЕШЕНИЯ  */
+
+@media (width >= 768px) {
+  :root {
+    --section-gap: 60px;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__text {
+    max-inline-size: 50%;
+  }
+
+  .section:not(.section:has(.gallery)) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .section:has(.gallery) .section__title {
+    grid-column: 1 / -1;
+  }
+
+  .section:has(.article-list_type_horizontal) .article-list {
+    grid-column: 1 / -1;
+  }
+
+  .gallery__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+  }
+
+  .gallery__item:first-of-type {
+    grid-column: span 2;
+  }
+
+  .gallery__item:last-of-type {
+    grid-column: span 2;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__text {
+    max-inline-size: 50%;
+  }
+
+  .article-list_type_horizontal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+  }
+
+  .gallery__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery__item:first-child {
+  grid-column: span 2;
+  }
+
+  .gallery__item:nth-child(2) {
+    grid-column: 3;
+    grid-row: span 2;
+  }
+
+  .gallery__item:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  .gallery__item:nth-child(5) {
+    grid-column: span 2;
+  }
 }
