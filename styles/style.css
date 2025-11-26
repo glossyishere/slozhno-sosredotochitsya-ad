@@ -17,6 +17,8 @@
   padding: 0 10px;
 }
 
+/* ДЕКОР  */
+
 .decorated-zone {
   position: relative;
 }
@@ -235,7 +237,7 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
-/* НА ДРУГИЕ РАЗРЕШЕНИЯ  */
+/* МЕДИАЗАПРОСЫ  */
 
 @media (width >= 768px) {
   :root {
@@ -259,10 +261,6 @@
   .header__text {
     max-inline-size: 364px;
     max-block-size: 117px;
-  }
-
-  .footer {
-    padding: 0px 20px;
   }
 
   .decorated-zone::before {
@@ -315,6 +313,10 @@
 
   .gallery__item:nth-child(5) {
     grid-column: span 2;
+  }
+
+  .footer {
+    padding: 0px 20px;
   }
 
   .footer__title {
