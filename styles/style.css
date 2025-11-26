@@ -158,7 +158,7 @@
 .article {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 11px;
 }
 
 .article__title {
