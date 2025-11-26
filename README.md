@@ -1,0 +1,1 @@
+https://github.com/glossyishere/slozhno-sosredotochitsya-ad/tree/main
