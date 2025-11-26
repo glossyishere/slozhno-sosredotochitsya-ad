@@ -131,7 +131,7 @@
 .section {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--gap);
+  gap: 10px;
 }
 
 .section:not(:has(.gallery)) {
@@ -154,7 +154,7 @@
 .article {
   display: flex;
   flex-direction: column;
-  gap: var(--block-gap);
+  gap: 9px;
 }
 
 .article__title {
@@ -330,6 +330,10 @@
 
   .section__title {
     max-inline-size: 315px;
+  }
+
+  .article {
+    gap: 10px;
   }
 
   .article-list_type_horizontal {
